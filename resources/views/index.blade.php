@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>akhtar kaya ketek</h1>
+    <h1>Hai Kawan</h1>
 </body>
 </html>
