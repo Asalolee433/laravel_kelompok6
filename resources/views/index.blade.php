@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hay kawan</h1>
+    <h1>Hay temen temen</h1>
 </body>
 </html>
