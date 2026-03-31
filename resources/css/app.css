@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@keyframes goldPulse {
+    0% { box-shadow: 0 0 10px rgba(212,175,55,.25); }
+    50% { box-shadow: 0 0 20px rgba(212,175,55,.45); }
+    100% { box-shadow: 0 0 10px rgba(212,175,55,.25); }
+}
+.gold-glow {
+    animation: goldPulse 3s ease-in-out infinite;
+}
+
+

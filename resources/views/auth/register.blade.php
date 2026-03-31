@@ -1,52 +1,90 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+    <div class="relative min-h-screen bg-cover bg-center"
+         style="background-image: url('{{ asset('images/lapangan.jpg') }}');">
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <!-- overlay (lebih terang) -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- CARD FULLSCREEN (lebih soft) -->
+        <div class="relative z-10 w-full min-h-screen
+                    bg-black/40 backdrop-blur-xl
+                    flex border border-yellow-400/20">
+
+            <!-- LEFT -->
+            <div class="w-1/2 p-12 text-white flex flex-col justify-center">
+                <span class="text-base tracking-[0.35em] text-[#d4af37] font-semibold uppercase">
+                    FUTSAL ARENA
+                </span>
+
+                <h1 class="text-6xl md:text-7xl font-extrabold leading-[1.1] mt-6">
+                    CREATE YOUR<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#fff3c4]">
+                        ACCOUNT
+                    </span>
+                </h1>
+
+                <p class="text-lg text-white/80 mt-6 max-w-lg">
+                    Daftar sekarang dan booking lapangan futsal favoritmu.
+                </p>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="w-1/2 flex items-center justify-center">
+                <div class="w-[380px] bg-black/30 backdrop-blur-lg rounded-xl p-7 text-white
+                            border border-yellow-400/20">
+
+                    <h2 class="text-xl font-extrabold mb-5 text-center tracking-widest">
+                        REGISTER
+                    </h2>
+
+                    <x-input-error :messages="$errors->all()" class="mb-4" />
+
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+
+                        <input type="text" name="name" placeholder="Name" value="{{ old('name') }}"
+                            class="w-full mb-3 px-4 py-2 rounded bg-black/30
+                                   border border-white/20
+                                   focus:border-yellow-400 focus:ring-yellow-400
+                                   text-white placeholder-white/50">
+
+                        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
+                            class="w-full mb-3 px-4 py-2 rounded bg-black/30
+                                   border border-white/20
+                                   focus:border-yellow-400 focus:ring-yellow-400
+                                   text-white placeholder-white/50">
+
+                        <input type="password" name="password" placeholder="Password"
+                            class="w-full mb-3 px-4 py-2 rounded bg-black/30
+                                   border border-white/20
+                                   focus:border-yellow-400 focus:ring-yellow-400
+                                   text-white placeholder-white/50">
+
+                        <input type="password" name="password_confirmation" placeholder="Confirm Password"
+                            class="w-full mb-4 px-4 py-2 rounded bg-black/30
+                                   border border-white/20
+                                   focus:border-yellow-400 focus:ring-yellow-400
+                                   text-white placeholder-white/50">
+
+                        <button
+                            class="w-full py-2 rounded-lg font-extrabold text-black
+                                   bg-yellow-400 hover:bg-yellow-500
+                                   shadow-[0_0_30px_rgba(250,204,21,0.35)]">
+                            REGISTER
+                        </button>
+
+                        <p class="text-sm text-center mt-4 text-gray-300">
+                            Sudah punya akun?
+                            <a href="{{ route('login') }}"
+                               class="text-yellow-400 font-semibold hover:text-yellow-500">
+                                Login
+                            </a>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+
         </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
+    </div>
 </x-guest-layout>
