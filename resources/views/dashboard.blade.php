@@ -1,14 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
     <div class="flex min-h-screen bg-gray-100">
 
         <aside class="w-64 bg-white border-r shadow-sm">
-            <div class="p-6 text-lg font-bold text-gray-800">
+            <div class="p-6 text-lg t font-bold text-gray-800">
                 Admin
             </div>
 
