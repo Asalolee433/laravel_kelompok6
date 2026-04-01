@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Futsal Arena</title>
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- TAILWIND CDN -->
@@ -87,7 +88,7 @@
 
                     @auth
                         <!-- DASHBOARD -->
-                        <a href="{{ route('dashboard') }}"
+                        <a href="{{ route('dashboard') }}" 
                            class="px-6 py-3 rounded-lg
                                   bg-gradient-to-r from-[#d4af37] to-[#f5e6b3]
                                   text-black font-semibold gold-glow
