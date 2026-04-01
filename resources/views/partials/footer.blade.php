@@ -1,8 +1,8 @@
-<footer class="mt-12 border-t border-white/10 py-4">
+<footer class="mt-12 border-t border-black/10 py-4">
     <div class="flex flex-col items-center gap-3">
 
         <!-- SOCIAL ICON -->
-        <div class="flex gap-4 text-white/60">
+        <div class="flex gap-4 text-black/60">
             <!-- Instagram -->
             <a href="#"
                class="hover:text-[#d4af37] transition"
@@ -23,7 +23,7 @@
             </a>
         </div>
 
-        <p class="text-white/40 text-xs">
+        <p class="text-black/40 text-xs">
             © {{ date('Y') }} Neper Futsal. All Night Reserved
         </p>
     </div>
