@@ -1,7 +1,8 @@
 <?php
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\GuestController;
+use App\Http\Controllers\GuestController;  
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LapanganController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,9 +12,22 @@ Route::get('/guest', function () {
     return view('guest.index');
 })->name('guest');
 
+// halaman user
+Route::get('/index', function () {
+    return view('guest.index');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('dashboard');
+})->middleware(['auth', 'admin'])->name('dashboard');
+
+//lapangan
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/lapangan', [LapanganController::class, 'index']);
+    Route::get('/lapangan/create', [LapanganController::class, 'create']);
+    Route::post('/lapangan', [LapanganController::class, 'store']);
+});
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard/edit/{id}', [DashboardController::class, 'edit'])->name('dashboard.edit');
