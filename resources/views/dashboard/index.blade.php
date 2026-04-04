@@ -109,6 +109,13 @@
                 <div class="admin-dashboard-header mb-6">
                     <div class="admin-dashboard-title">
                         {{ __("You're log in as admin") }}
+                        <a href="{{ route('logout') }}" 
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dashboard;
 use App\Models\guest;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class GuestController extends Controller
      */
     public function index()
     {
-        $lapangan = guest::all();
+        $jadwal = dashboard::all();
         return view('guest.index', compact('jadwal'));
     }
 

@@ -88,7 +88,7 @@
 
                     @auth
                         <!-- DASHBOARD -->
-                        <a href="{{ route('dashboard') }}" 
+                        <a href="{{ route('dashboard.index') }}" 
                            class="px-6 py-3 rounded-lg
                                   bg-gradient-to-r from-[#d4af37] to-[#f5e6b3]
                                   text-black font-semibold gold-glow

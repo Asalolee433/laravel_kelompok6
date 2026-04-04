@@ -79,13 +79,25 @@
                                 </a>
                             @endif
                         </div>
-
+                        
                         <button
                             class="w-full py-3 rounded-lg
                                    bg-gradient-to-r from-[#d4af37] to-[#f5e6b3]
                                    text-black font-semibold
                                    hover:scale-[1.02] transition">
                             Login
+
+                        @php
+                            $users = Auth::user();
+                            if ($users && $users->role === 'admin') {
+                                header('Location: ' . route('dashboard.index'));
+                                exit();
+                            } elseif ($users) {
+                                header('Location: ' . route('guest.index'));
+                                exit();
+                            }
+                        @endphp
+
                         </button>
 
                     </form>

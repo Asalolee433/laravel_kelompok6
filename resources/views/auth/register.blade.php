@@ -70,7 +70,7 @@
                             class="w-full py-2 rounded-lg font-extrabold text-black
                                    bg-yellow-400 hover:bg-yellow-500
                                    shadow-[0_0_30px_rgba(250,204,21,0.35)]">
-                            REGISTER
+                            <a href="{{ route('guest.index') }}" class="text-black font-extrabold">REGISTER</a>
                         </button>
 
                         <p class="text-sm text-center mt-4 text-gray-300">

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class guest extends Model
 {
-    protected $table = 'jadwal';
+    protected $table = 'jadwals';
 }
